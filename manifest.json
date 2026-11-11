@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Egodact Addon: Tower Stack",
+    "version": "0.1.0",
+    "description": "Drop blocks and build the tallest tower, right inside Egodact.",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://app.egodact.com/*"
+            ],
+            "js": [
+                "sdk.js",
+                "lib.js",
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
