@@ -21,7 +21,6 @@
 
     const ADDON_ID = 'tower-stack-addon';
     const GAME_ID = 'tower-stack';
-    const HAMBURGER_ID = 'tower-stack-open';
 
     const store = (L.data && typeof L.data.storage === 'function')
         ? L.data.storage('tower-stack')
@@ -38,7 +37,7 @@
     client.registerAddon({
         id: ADDON_ID,
         name: 'Tower Stack',
-        version: '0.1.0',
+        version: '0.1.1',
         description: 'Drop blocks and build the tallest tower.',
         author: 'MaxiTaxi',
         source: 'https://github.com/hoggie-homerserver/Egodact_addon_Tower_Stack'
@@ -52,19 +51,7 @@
         icon: ICON
     });
 
-    // Optional quick entry in the hamburger menu (hosts with hamburger support).
-    try {
-        client.registerHamburger({
-            addonId: ADDON_ID,
-            id: HAMBURGER_ID,
-            title: 'Tower Stack',
-            icon: ICON,
-            order: 60
-        });
-    } catch (err) {}
-
     client.onOpen(GAME_ID, function () { openTowerStack(); });
-    client.onOpen(HAMBURGER_ID, function () { openTowerStack(); });
 
     // ------------------------------------------------------------
     // Game
